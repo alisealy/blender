@@ -21,8 +21,7 @@
  * \ingroup edtransform
  */
 
-#ifndef __TRANSFORM_H__
-#define __TRANSFORM_H__
+#pragma once
 
 #include "ED_numinput.h"
 #include "ED_transform.h"
@@ -80,7 +79,7 @@ typedef struct TransSnap {
   bool project;
   bool snap_self;
   bool peel;
-  bool snap_spatial_grid;
+  bool use_backface_culling;
   char status;
   /* Snapped Element Type (currently for objects only). */
   char snapElem;
@@ -498,7 +497,6 @@ enum {
   MOD_PRECISION = 1 << 1,
   MOD_SNAP = 1 << 2,
   MOD_SNAP_INVERT = 1 << 3,
-  MOD_CONSTRAINT_PLANE = 1 << 4,
 };
 
 /* use node center for transform instead of upper-left corner.
@@ -576,6 +574,8 @@ enum {
   TFM_MODAL_PROPSIZE = 26,
   /* node editor insert offset (aka auto-offset) direction toggle */
   TFM_MODAL_INSERTOFS_TOGGLE_DIR = 27,
+
+  TFM_MODAL_AUTOCONSTRAINT = 28,
 };
 
 bool initTransform(struct bContext *C,
@@ -752,5 +752,3 @@ bool checkUseAxisMatrix(TransInfo *t);
                           *tc_end = (t)->data_container + (t)->data_container_len; \
        th != tc_end; \
        th++, i++)
-
-#endif

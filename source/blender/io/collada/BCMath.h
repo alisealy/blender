@@ -18,8 +18,7 @@
  * \ingroup collada
  */
 
-#ifndef __BCMATH_H__
-#define __BCMATH_H__
+#pragma once
 
 #include "BlenderTypes.h"
 
@@ -99,11 +98,9 @@ class BCMatrix {
   void add_transform(const BCMatrix &matrix, const bool inverted = false);
   void apply_transform(const BCMatrix &matrix, const bool inverted = false);
 
-  const bool in_range(const BCMatrix &other, float distance) const;
+  bool in_range(const BCMatrix &other, float distance) const;
 
   static void sanitize(Matrix &matrix, int precision);
   static void sanitize(DMatrix &matrix, int precision);
   static void transpose(Matrix &matrix);
 };
-
-#endif /* __BCMATH_H__ */

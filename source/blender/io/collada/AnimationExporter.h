@@ -14,8 +14,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __ANIMATIONEXPORTER_H__
-#define __ANIMATIONEXPORTER_H__
+#pragma once
 
 #include <math.h>
 #include <stdio.h>
@@ -240,7 +239,7 @@ class AnimationExporter : COLLADASW::LibraryAnimations {
                                            bool *has_tangents);
 
   std::string get_axis_name(std::string channel, int id);
-  const std::string get_collada_name(std::string channel_target) const;
+  std::string get_collada_name(std::string channel_target) const;
   std::string get_collada_sid(const BCAnimationCurve &curve, const std::string axis_name);
 
   /* ===================================== */
@@ -258,5 +257,3 @@ class AnimationExporter : COLLADASW::LibraryAnimations {
   void export_morph_animation(Object *ob, BCAnimationSampler &sampler);
 #endif
 };
-
-#endif /* __ANIMATIONEXPORTER_H__ */

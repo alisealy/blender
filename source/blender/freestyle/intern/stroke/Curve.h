@@ -14,8 +14,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef __FREESTYLE_CURVE_H__
-#define __FREESTYLE_CURVE_H__
+#pragma once
 
 /** \file
  * \ingroup freestyle
@@ -326,7 +325,7 @@ class CurvePoint : public Interface0D {
   int occluders_size() const;
   const Polygon3r &occludee() const;
   const SShape *occluded_shape() const;
-  const bool occludee_empty() const;
+  bool occludee_empty() const;
   real z_discontinuity() const;
 #if 0
   float local_average_depth() const;
@@ -604,5 +603,3 @@ class Curve : public Interface1D {
 };
 
 } /* namespace Freestyle */
-
-#endif  // __FREESTYLE_CURVE_H__

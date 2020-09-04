@@ -13,8 +13,7 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
-#ifndef __BKE_MESH_WRAPPER_H__
-#define __BKE_MESH_WRAPPER_H__
+#pragma once
 
 /** \file
  * \ingroup bke
@@ -31,7 +30,7 @@ extern "C" {
 struct Mesh *BKE_mesh_wrapper_from_editmesh_with_coords(
     struct BMEditMesh *em,
     const struct CustomData_MeshMasks *cd_mask_extra,
-    float (*vertexCos)[3],
+    const float (*vert_coords)[3],
     const struct Mesh *me_settings);
 struct Mesh *BKE_mesh_wrapper_from_editmesh(struct BMEditMesh *em,
                                             const struct CustomData_MeshMasks *cd_mask_extra,
@@ -55,5 +54,3 @@ void BKE_mesh_wrapper_vert_coords_copy_with_mat4(const struct Mesh *me,
 #ifdef __cplusplus
 }
 #endif
-
-#endif /* __BKE_MESH_WRAPPER_H__ */

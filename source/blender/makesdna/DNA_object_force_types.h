@@ -21,8 +21,7 @@
  * \ingroup DNA
  */
 
-#ifndef __DNA_OBJECT_FORCE_TYPES_H__
-#define __DNA_OBJECT_FORCE_TYPES_H__
+#pragma once
 
 #include "DNA_defs.h"
 #include "DNA_listBase.h"
@@ -92,6 +91,10 @@ typedef struct PartDeflect {
    * How much force is converted into "air flow", i.e.
    * force used as the velocity of surrounding medium. */
   float f_flow;
+  /** How much force is reduced when acting parallel to a surface, e.g. cloth. */
+  float f_wind_factor;
+
+  char _pad0[4];
 
   /** Noise size for noise effector, restlength for harmonic effector. */
   float f_size;
@@ -405,5 +408,3 @@ typedef struct SoftBody {
 #ifdef __cplusplus
 }
 #endif
-
-#endif /* __DNA_OBJECT_FORCE_TYPES_H__ */

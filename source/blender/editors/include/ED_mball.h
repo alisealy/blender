@@ -21,8 +21,7 @@
  * \ingroup editors
  */
 
-#ifndef __ED_MBALL_H__
-#define __ED_MBALL_H__
+#pragma once
 
 #ifdef __cplusplus
 extern "C" {
@@ -38,8 +37,12 @@ void ED_operatortypes_metaball(void);
 void ED_operatormacros_metaball(void);
 void ED_keymap_metaball(struct wmKeyConfig *keyconf);
 
-struct MetaElem *ED_mball_add_primitive(
-    struct bContext *C, struct Object *obedit, float mat[4][4], float dia, int type);
+struct MetaElem *ED_mball_add_primitive(struct bContext *C,
+                                        struct Object *obedit,
+                                        bool obedit_is_new,
+                                        float mat[4][4],
+                                        float dia,
+                                        int type);
 
 bool ED_mball_select_pick(
     struct bContext *C, const int mval[2], bool extend, bool deselect, bool toggle);
@@ -61,5 +64,3 @@ void ED_mball_undosys_type(struct UndoType *ut);
 #ifdef __cplusplus
 }
 #endif
-
-#endif /* __ED_MBALL_H__ */

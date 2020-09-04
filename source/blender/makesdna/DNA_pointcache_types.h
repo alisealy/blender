@@ -18,8 +18,7 @@
  * \ingroup DNA
  */
 
-#ifndef __DNA_POINTCACHE_TYPES_H__
-#define __DNA_POINTCACHE_TYPES_H__
+#pragma once
 
 #include "DNA_listBase.h"
 
@@ -50,6 +49,7 @@ extern "C" {
 #define BPHYS_TOT_DATA 8
 
 #define BPHYS_EXTRA_FLUID_SPRINGS 1
+#define BPHYS_EXTRA_CLOTH_ACCELERATION 2
 
 typedef struct PTCacheExtra {
   struct PTCacheExtra *next, *prev;
@@ -166,5 +166,3 @@ typedef struct PointCache {
 #ifdef __cplusplus
 }
 #endif
-
-#endif /* __DNA_POINTCACHE_TYPES_H__ */
